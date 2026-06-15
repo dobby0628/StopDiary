@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# send-scheduled 함수를 10분마다 실행해서 정해진 시간(아침/점심/오후/저녁/밤)에
+# 알림을 발송합니다.
+[functions."send-scheduled"]
+  schedule = "*/10 * * * *"
